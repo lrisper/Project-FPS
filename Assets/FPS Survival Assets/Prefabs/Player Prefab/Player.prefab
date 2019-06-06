@@ -1000,11 +1000,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireRate: 15
   damage: 20
-  arrowPrefab: {fileID: 6434916233459448457, guid: 3fb5768938b41444e9338f5534fe54d4,
+  _arrowPrefab: {fileID: 6434916233459448457, guid: 3fb5768938b41444e9338f5534fe54d4,
     type: 3}
-  spearPrefab: {fileID: 5475018229740927727, guid: 50b252efaaba344ff9ac87b848f29b83,
+  _spearPrefab: {fileID: 5475018229740927727, guid: 50b252efaaba344ff9ac87b848f29b83,
     type: 3}
-  arrowBowStartPosition: {fileID: 2927336359303998615}
+  _arrowBowStartPosition: {fileID: 2927336359303998615}
 --- !u!1 &7338543245595655645
 GameObject:
   m_ObjectHideFlags: 0
@@ -1139,7 +1139,7 @@ MonoBehaviour:
   _canUnlock: 1
   _sensivity: 0
   _smootheWeight: 0.4
-  _rollAngle: 10
+  _rollAngle: 0.3
   _rollSpeed: 3
   _smoothSteps: 10
   _defaultLookLimits: {x: -70, y: 80}

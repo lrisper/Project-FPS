@@ -17,8 +17,8 @@ public class PlayerAttack : MonoBehaviour
     private GameObject _crosshair;
     private bool _isAiming;
 
-    [SerializeField] private GameObject arrowPrefab, spearPrefab;
-    [SerializeField] private Transform arrowBowStartPosition;
+    [SerializeField] private GameObject _arrowPrefab, _spearPrefab;
+    [SerializeField] private Transform _arrowBowStartPosition;
 
 
     public void Awake()
@@ -118,14 +118,14 @@ public class PlayerAttack : MonoBehaviour
     {
         if (throwArrow)
         {
-            GameObject arrow = Instantiate(arrowPrefab);
-            arrow.transform.position = arrowBowStartPosition.position;
+            GameObject arrow = Instantiate(_arrowPrefab);
+            arrow.transform.position = _arrowBowStartPosition.position;
             arrow.GetComponent<ArrowBowScript>().Lunch(_mainCam);
         }
         else
         {
-            GameObject spear = Instantiate(spearPrefab);
-            spear.transform.position = arrowBowStartPosition.position;
+            GameObject spear = Instantiate(_spearPrefab);
+            spear.transform.position = _arrowBowStartPosition.position;
             spear.GetComponent<ArrowBowScript>().Lunch(_mainCam);
         }
     }

@@ -30,6 +30,7 @@ public class MouseLook : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+
     }
 
     // Update is called once per frame
@@ -67,7 +68,7 @@ public class MouseLook : MonoBehaviour
 
         _lookAngles.x = Mathf.Clamp(_lookAngles.x, _defaultLookLimits.x, _defaultLookLimits.y);
 
-        //_currentRollAngle = Mathf.Lerp(_currentRollAngle, Input.GetAxisRaw(MouseAxis.MOUSE_X) * _rollAngle, Time.deltaTime * _rollSpeed);
+        _currentRollAngle = Mathf.Lerp(_currentRollAngle, Input.GetAxisRaw(MouseAxis.MOUSE_X) * _rollAngle, Time.deltaTime * _rollSpeed);
 
         _lookRoot.rotation = Quaternion.Euler(_lookAngles.x, 0f, _currentRollAngle);
         _playerRoot.rotation = Quaternion.Euler(0f, _lookAngles.y, 0f);
