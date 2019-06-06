@@ -209,6 +209,7 @@ GameObject:
   - component: {fileID: 307149994221804773}
   - component: {fileID: 408151920051729056}
   - component: {fileID: 219111639700198542}
+  - component: {fileID: 679952155416858515}
   m_Layer: 0
   m_Name: Cannibal
   m_TagString: Untagged
@@ -314,6 +315,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ec06cf5e32cec4baa88d2ef692cf2ecc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &679952155416858515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2658662386108478982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67eaee72af3504522a46501c445123d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2658662386108478984
