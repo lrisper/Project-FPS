@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa1d2709bbd79496c956aa789e0e591a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 2
+  damage: 5
   radius: 1
   layerMask:
     serializedVersion: 2
@@ -812,6 +812,7 @@ GameObject:
   - component: {fileID: 2744876989741510539}
   - component: {fileID: 8311771643881725621}
   - component: {fileID: 2822460870318114220}
+  - component: {fileID: 2767322323294278831}
   m_Layer: 10
   m_Name: Boar
   m_TagString: Enemy
@@ -924,6 +925,22 @@ MonoBehaviour:
   waitBeforeAttack: 2
   attactTimer: 0
   attackPoint: {fileID: 1326628772964914150}
+--- !u!114 &2767322323294278831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5186393772108143851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a69f4575baeab447da49907a7c4b5887, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  isPlayer: 0
+  isBoar: 1
+  isCannibal: 0
 --- !u!1 &5186393772108143853
 GameObject:
   m_ObjectHideFlags: 0

@@ -190,4 +190,6 @@ public class EnemyController : MonoBehaviour
         }
 
     }
+    public EnemyState enemyState
+    { get; set; }
 }

@@ -681,7 +681,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa1d2709bbd79496c956aa789e0e591a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 2
+  damage: 25
   radius: 1
   layerMask:
     serializedVersion: 2
@@ -944,6 +944,7 @@ GameObject:
   - component: {fileID: 198213706}
   - component: {fileID: 1793375159962889796}
   - component: {fileID: 3875503804709656000}
+  - component: {fileID: 5783273199515131649}
   m_Layer: 11
   m_Name: Player
   m_TagString: Player
@@ -1047,12 +1048,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireRate: 15
-  damage: 20
+  damage: 50
   _arrowPrefab: {fileID: 6434916233459448457, guid: 3fb5768938b41444e9338f5534fe54d4,
     type: 3}
   _spearPrefab: {fileID: 5475018229740927727, guid: 50b252efaaba344ff9ac87b848f29b83,
     type: 3}
   _arrowBowStartPosition: {fileID: 2927336359303998615}
+--- !u!114 &5783273199515131649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7338543245395023829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a69f4575baeab447da49907a7c4b5887, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  isPlayer: 1
+  isBoar: 0
+  isCannibal: 0
 --- !u!1 &7338543245595655645
 GameObject:
   m_ObjectHideFlags: 0
