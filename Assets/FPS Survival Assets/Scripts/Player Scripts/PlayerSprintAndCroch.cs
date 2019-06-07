@@ -28,6 +28,10 @@ public class PlayerSprintAndCroch : MonoBehaviour
     private float _sprintStepDistance = 0.25f;
     private float _crouchStepDistance = 0.5f;
 
+    private PlayerStats _playerStats;
+    private float _sprintValue = 100f;
+    public float sprintTreshold = 10f;
+
 
     // Start is called before the first frame update
     void Awake()
@@ -36,6 +40,8 @@ public class PlayerSprintAndCroch : MonoBehaviour
         _lookRoot = transform.GetChild(0);
 
         _playerFootSteps = GetComponentInChildren<PlayerFootSteps>();
+
+        _playerStats = GetComponent<PlayerStats>();
     }
 
     public void Start()
@@ -55,6 +61,19 @@ public class PlayerSprintAndCroch : MonoBehaviour
 
     void Sprint()
     {
+        // If we have stemina we can sprint
+        if (_sprintValue > 0f)
+        {
+            // bug when holiding down sheft and not moving it is beening used
+            if (Input.GetKeyDown(KeyCode.LeftShift) && !_isCrouching)
+            {
+                _playerMovment.Speed = SprintSpeed;
+
+                _playerFootSteps.StepDistance = _sprintStepDistance;
+                _playerFootSteps.VolMin = _sprintVolume;
+                _playerFootSteps.VolMax = _sprintVolume;
+            }
+        }
         if (Input.GetKeyDown(KeyCode.LeftShift) && !_isCrouching)
         {
             _playerMovment.Speed = SprintSpeed;
@@ -63,6 +82,7 @@ public class PlayerSprintAndCroch : MonoBehaviour
             _playerFootSteps.VolMin = _sprintVolume;
             _playerFootSteps.VolMax = _sprintVolume;
         }
+
         if (Input.GetKeyUp(KeyCode.LeftShift) && !_isCrouching)
         {
             _playerMovment.Speed = MoveSpeed;
@@ -72,14 +92,47 @@ public class PlayerSprintAndCroch : MonoBehaviour
             _playerFootSteps.VolMin = _walkVolumeMin;
             _playerFootSteps.VolMax = _walkVolumeMax;
 
+        }
+        if (Input.GetKey(KeyCode.LeftShift) && !_isCrouching)
+        {
+            _sprintValue -= sprintTreshold * Time.deltaTime;
+
+            if (_sprintValue <= 0)
+            {
+                _sprintValue = 0;
+
+                // reset speed and sounds 
+                _playerMovment.Speed = MoveSpeed;
+                _playerFootSteps.StepDistance = _sprintStepDistance;
+                _playerFootSteps.VolMin = _sprintVolume;
+                _playerFootSteps.VolMax = _sprintVolume;
+            }
+            //_playerStats.DisplayStaminaStats(_sprintValue);
+            else
+            {
+                if (_sprintValue != 100)
+                {
+                    _sprintValue += (sprintTreshold / 2 * Time.deltaTime);
+                    _playerStats.DisplayStaminaStats(_sprintValue);
+
+                    if (_sprintValue >= 100)
+                    {
+                        _sprintValue = 100f;
+                    }
+
+                }
+            }
+
 
         }
+
     }
 
     void Crouch()
     {
         if (Input.GetKeyDown(KeyCode.C))
         {
+            // if we are crouching stand up
             if (_isCrouching)
             {
                 _lookRoot.localPosition = new Vector3(0f, _standHeight, 0f);
